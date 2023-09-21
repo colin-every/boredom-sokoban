@@ -10,7 +10,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setForegroundFPS(60);
 		config.setTitle("Boredom Sokoban");
-		config.setWindowedMode(630, 630);
+		config.setWindowedMode(968, 968);
 		new Lwjgl3Application(new sokobanBore(), config);
 	}
 }

@@ -15,6 +15,9 @@ public class sokobanBore extends ApplicationAdapter {
 	Texture blank;
 	Texture wall;
 	Texture player;
+	Texture goal;
+	Texture box;
+	Texture scoreBox;
 	OrthographicCamera camera;
 	board board = new board();
 	long lastInput;
@@ -24,11 +27,14 @@ public class sokobanBore extends ApplicationAdapter {
 	public void create () {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, 1290, 1290);
-		board.boardMake();
+		board.getNextLevel();
 		batch = new SpriteBatch();
 		blank = new Texture("blank.png");
 		wall = new Texture("wall.png");
 		player = new Texture("player.png");
+		goal = new Texture("goal.png");
+		box = new Texture("flat_crate.png");
+		scoreBox = new Texture("scored_crate.png");
 	}
 
 	@Override
@@ -47,6 +53,15 @@ public class sokobanBore extends ApplicationAdapter {
 						break;
 					case 2:
 						batch.draw(player, 20+(60*i), 20+(60*k));
+						break;
+					case 3:
+						batch.draw(box, 20+(60*i), 20+(60*k));
+						break;
+					case 4:
+						batch.draw(goal, 20+(60*i), 20+(60*k));
+						break;
+					case 5:
+						batch.draw(scoreBox, 20+(60*i), 20+(60*k));
 						break;
 				}
 			}
