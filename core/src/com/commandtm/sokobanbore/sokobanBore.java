@@ -80,6 +80,9 @@ public class sokobanBore extends ApplicationAdapter {
 			if(Gdx.input.isKeyPressed(Keys.RIGHT)){
 				getter.inputGetter('x', 1);
 			}
+			if(Gdx.input.isKeyPressed(Keys.R)){
+				board.loadLevel(board.level);
+			}
 			lastInput = TimeUtils.nanoTime();
 		}
 	}
