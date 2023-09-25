@@ -81,7 +81,7 @@ public class sokobanBore extends ApplicationAdapter {
 				getter.inputGetter('x', 1);
 			}
 			if(Gdx.input.isKeyPressed(Keys.R)){
-				board.loadLevel(board.level);
+				board.loadLevel(com.commandtm.sokobanbore.board.level);
 			}
 			lastInput = TimeUtils.nanoTime();
 		}
