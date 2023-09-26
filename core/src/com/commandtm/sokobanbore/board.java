@@ -2,12 +2,21 @@ package com.commandtm.sokobanbore;
 
 import com.badlogic.gdx.math.MathUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.Scanner;
 
 public class board {
     static ArrayList<Integer> beatLevels = new ArrayList<>();
     static int[][] board = new int[21][21];
+    static File levelsDir = new File("C:\\boreSokoban");
+    static File customLevel;
     static int level;
 
     public int getBoard(int k ,int i){
@@ -31,7 +40,7 @@ public class board {
     }
 
     public void getNextLevel(){
-        level = MathUtils.random(1, 3);
+        level = MathUtils.random(1, (3+Objects.requireNonNull(levelsDir.list()).length));
         for (int k = 0; k < beatLevels.size();k++){
             try{
                 if (level == beatLevels.get(k)){
@@ -146,6 +155,20 @@ public class board {
                 };
                 board = localBoard;
                 break;
+            default:
+                customLevel = new File("C:\\boreSokoban\\" + nextLevel + ".txt");
+                Scanner fileReader;
+                try {
+                    fileReader = new Scanner(customLevel);
+                } catch (FileNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+                for (int k = 0;k < board.length; k++){
+                    for (int i = 0;i < board[k].length; i++){
+                        board[k][i] = fileReader.nextInt();
+                    }
+                }
+
         }
     }
 }
