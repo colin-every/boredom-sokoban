@@ -1,5 +1,7 @@
 package com.commandtm.sokobanbore;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Graphics;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.commandtm.sokobanbore.sokobanBore;
@@ -12,6 +14,7 @@ public class DesktopLauncher {
 		config.setTitle("Boredom Sokoban");
 		config.setWindowIcon("icon.png");
 		config.setWindowedMode(968, 968);
+		config.setWindowSizeLimits(968, 968, 968, 968);
 		new Lwjgl3Application(new sokobanBore(), config);
 	}
 }

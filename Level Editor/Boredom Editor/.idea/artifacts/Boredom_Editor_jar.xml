@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Boredom Editor:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Boredom_Editor_jar</output-path>
+    <root id="archive" name="Boredom Editor.jar">
+      <element id="module-output" name="Boredom Editor" />
+    </root>
+  </artifact>
+</component>
